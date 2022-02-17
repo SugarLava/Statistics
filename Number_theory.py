@@ -11,11 +11,11 @@ EXAMPLE: INPUT: 5! = 120
 def trailing_zeros(n):
 
 	res = 0;
-	s = 5
-	while s < n:
-		res+= n//s
-		s*=5
+	while n>1:
+		n//=5		
+		res+=n
 	return res
+
 
 '''
 
@@ -48,8 +48,7 @@ def maxpow(factorial, number):
 	in the number.	
 	'''
 	for i in prime_factors:
-		exp = 0
-		f = factorial
+		exp, f = 0, factorial
 		while f>=1:
 			f//=i
 			exp+=f
